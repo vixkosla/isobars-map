@@ -1,9 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import Mapbox from "./Map.js";
+import prepareData from "./prepareData.js";
+
+const data = prepareData();
 
 function App() {
   return (
     <div className="App">
+      <Mapbox dataSource={data} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
