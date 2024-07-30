@@ -38,6 +38,8 @@ export default function PlotMap() {
     const plot = Plot.plot({
       // grid: true,
       //   projection: "equal-earth",
+      width: window.innerWidth * 0.8,
+      height: window.innerHeight * 0.85,
       color: {
         scheme: "Viridis",
         legend: true,
@@ -49,7 +51,7 @@ export default function PlotMap() {
           x: "X",
           y: "Y",
           fill: "F",
-          blur: 3,
+          blur: 5,
           stroke: "black",
           //   clip: "sphere",
         }),
@@ -73,7 +75,12 @@ export default function PlotMap() {
             "Комментарий": "Комментарий",
           },
           r: 2,
-          tip: "xy",
+          tip: {
+            format: {
+              // x: "X",
+              // y: "Y"
+            }
+          },
         }),
       ],
     });
