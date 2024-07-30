@@ -17,6 +17,10 @@ export default function PlotMap() {
           X: +d.X,
           Y: +d.Y,
           F: +d.F,
+          "Имя точки": "#9738",
+          "Давление в точке": "4.5",
+          "Температура в точке": "-7.1",
+          "Комментарий": "исследовательская"
         };
       })
     );
@@ -29,7 +33,7 @@ export default function PlotMap() {
   useEffect(() => {
     if (data === undefined) return;
 
-    // console.log(fData)
+    console.log(data)
 
     const plot = Plot.plot({
       // grid: true,
@@ -55,16 +59,22 @@ export default function PlotMap() {
         //   x: "X",
         //   y: "Y",
         // }),
-        Plot.dot(data, ({
+        Plot.dot(data, {
           x: "X",
           y: "Y",
           // f: "F",
           text: "Simple text",
           stroke: "F",
           fill: "white",
+          channels: {
+            "Имя точки": "Имя точки",
+            "Давление в точке": "Давление в точке",
+            "Температура в точке": "Температура в точке",
+            "Комментарий": "Комментарий",
+          },
           r: 2,
           tip: "xy",
-        })),
+        }),
       ],
     });
 
